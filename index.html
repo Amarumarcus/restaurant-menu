@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Smythe&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
+    <title>Jimmys Dinner</title>
+</head>
+
+<body>
+
+    <header>
+        <div class="header-container">
+            <h1>Jimmy's Dinner</h1>
+            <p>The best burgers and pizzas in town.</p>
+        </div>
+    </header>
+
+    <!-- menu section -->
+    <section>
+        <div class="menu">
+            <ul id="menu">
+    <!-- Here menu are generated -->
+            </ul>
+        </div>    
+    </section>
+    
+    <!-- order section -->
+    <section>
+        <div class="checkout-section" id="checkout-section">
+            <h2>Your order</h2>
+            <div class="checkout-container" id="checkout-container">
+    <!-- Here order are generated -->
+            </div>
+            <div class="total-container">
+                <h3>Total price</h3>
+                <h3 id="total-price"></h3>
+            </div>
+            <button id="order-button">Complete order</button>
+        </div>
+    </section>
+    
+    <!-- pay section -->
+    <section>
+        <form class="pay-form" id="pay-form">
+            <img src="image/add-btn.svg" alt="x-circle" data-close='close' class="close-btn">
+            <h2>Enter card details</h2>
+            <input type="text" placeholder="Enter your name" class="input" id="name-input" minlength="3" maxlength="12" required>
+            <input type="number" placeholder="Enter card number" class="input" minlength="16" maxlength="16" required>
+            <input type="number" placeholder="Enter CVV" class="input" minlength="3" maxlength="3" required>
+            <button type="submit" class="form" id="pay-btn">Pay</button>
+        </form>
+    </section>
+
+    <section id="order-complite">
+        <!-- message for client -->
+    </section>
+
+    <script src="index.js" type="module"></script>
+</body>
+</html>
