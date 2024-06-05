@@ -29,18 +29,21 @@ function handleOrderBtnClicks() {
 // function to handle pay button clicks
 function handlePayBtnClicks() {
     const clientName = document.getElementById('name-input').value
-    const orderComplite = document.getElementById('order-complite')
-    const messegeToClient = `
-        <div class="order-confirm" id="order-confirm">
-            <h2>Thanks, ${clientName}! Your order is on its way!</h2>
-        </div>
-        `
-    itemsToOrder = []
-    closePayForm()
-    totalPrice()
-    orderCheck()
-    orderComplite.innerHTML = messegeToClient
-    orderComplite.scrollIntoView()
+    if (clientName) {
+        const orderComplite = document.getElementById('order-complite')
+        const messegeToClient = `
+            <div class="order-confirm" id="order-confirm">
+                <h2>Thanks, ${clientName}! Your order is on its way!</h2>
+            </div>
+            `
+        itemsToOrder = []
+        closePayForm()
+        totalPrice()
+        orderCheck()
+        orderComplite.innerHTML = messegeToClient
+        orderComplite.scrollIntoView()
+    }
+
 }
 
 // function to close pay form
@@ -101,8 +104,13 @@ function renderCheckout(newArr = itemsToOrder){
 
 // function to remove item to order
 function handleRemoveBtnClicks(item){
-    itemsToOrder = itemsToOrder.filter(target => 
-        target.id !== Number(item))
+    const itemsToRemove = itemsToOrder.find(target => 
+        target.id === Number(item))
+    
+    if (itemsToRemove) {
+        const index = itemsToOrder.indexOf(itemsToRemove)
+        itemsToOrder.splice(index, 1);
+    }
 
     render(itemsToOrder)
     totalPrice()
